@@ -1,0 +1,47 @@
+
+<div class="span2"><div class="accordion" id="accordion-87476"><div class="accordion-group" ng-repeat="menu in listMenu">
+<div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-menu{menu.id}" ng-href="#accordion-element{{ menu.id }}">{{menu.name}}</a></div>
+<div id="accordion-element{menu.id}" class="accordion-body collapse in"><div class="accordion-inner" ng-repeat="subMenu in menu.listSubMenu"><a ng-href="#/{{ subMenu.link }}" style="color : black" class="btn btn-link">{{subMenu.name}}</a></div></div>
+</div></div></div><div class="span10"><form class="form-horizontal" name="produtoFrm"><fieldset>
+<div class="page-header"><h1>
+Formulário de Produto<br><small style="font-size: 18px;">#{{produto._id}}</small>
+</h1></div>
+<div class="alert alert-{{info.type}}">{{info.msg}}</div>
+<div class="control-group">
+<label class="control-label" for="inputNome">Nome</label><div class="controls">
+<input type="text" id="inputNome" ng-model="produto.nome" required="" ng-pattern="" name="nome"><span ng-show="produtoFrm.nome.$error.pattern" class="alert">Campo Nome Requerido</span>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputCodbarra">Código de Barra</label><div class="controls">
+<input type="text" id="inputCodbarra" ng-model="produto.codbarra" required="" ng-pattern="/^\d*$/" name="codbarra"><span ng-show="produtoFrm.codbarra.$error.pattern" class="alert">Código de Barra somente números</span>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputDescricao">Descrição</label><div class="controls">
+<input type="text" id="inputDescricao" ng-model="produto.descricao" required="" ng-pattern="" name="descricao"><span ng-show="produtoFrm.descricao.$error.pattern" class="alert">Campo (Descrição) Invalido</span>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputResumo">Resumo</label><div class="controls">
+<input type="text" id="inputResumo" ng-model="produto.resumo" required="" ng-pattern="" name="resumo"><span ng-show="produtoFrm.resumo.$error.pattern" class="alert">Campo (Resumo) Invalido</span>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputUnidade">Unidade</label><div class="controls">
+<input type="text" id="inputUnidade" ng-model="produto.unidade" required="" ng-pattern="" name="unidade"><span ng-show="produtoFrm.unidade.$error.pattern" class="alert">Campo (Unidade) Invalido</span>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputPeso">Peso</label><div class="controls">
+<input type="text" id="inputPeso" ng-model="produto.peso" required="" ng-pattern="/^\d*$/" name="peso"><span ng-show="produtoFrm.peso.$error.pattern" class="alert">Peso somente números</span>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label" for="inputFornecedor">Fornecedor</label><div class="controls">
+<input type="text" id="inputFornecedor" ng-model="produto.fornecedor" required="" ng-pattern="" name="fornecedor"><span ng-show="produtoFrm.fornecedor.$error.pattern" class="alert">Campo (Fornecedor) Invalido</span>
+</div>
+</div>
+<div class="control-group"><div class="controls"><button class="btn btn-success" ng-disabled="produtoFrm.$invalid" ng-click="save(produto)">Salvar Produto</button></div></div>
+</fieldset></form></div>
+
