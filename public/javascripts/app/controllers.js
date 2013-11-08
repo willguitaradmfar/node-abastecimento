@@ -40,8 +40,20 @@ angular.module('app.controllers', [])
 		if($routeParams.numBomba){
 			$scope.recordsales = {};
 			$scope.recordsales.numbomba = $routeParams.numBomba;
+			$scope.recordsales.user = "Aministrator"; //usuário logado
 		}
-		
+
+		$scope.validaCliente = function () {
+			$scope.recordsales.obj = undefined;
+			if(/^\w{3}\d{4}$/.test($scope.recordsales.cliente)
+				|| /^\w{3}-\d{4}$/.test($scope.recordsales.cliente)){
+				$scope.recordsales.obj = {};
+				$scope.recordsales.obj.cliente = {};
+				$scope.recordsales.obj.cliente.nome = "Lucas Neri Fernando";
+				$scope.recordsales.obj.cliente.saldo = 987.66;
+				$scope.recordsales.obj.cliente.liberado = 'Liberado';
+			}
+		}		
 	}
 ])
 
