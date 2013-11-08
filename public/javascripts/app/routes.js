@@ -10,7 +10,7 @@ $routeProvider.when('/remember-password', {templateUrl: 'partials/_remember-pass
 $routeProvider.when('/home', {templateUrl: 'partials/_home.html', controller: 'HomeController'});
 $routeProvider.when('/input-supply', {templateUrl: 'partials/_input-supply.html', controller: 'InputSupplyController'});
 $routeProvider.when('/messages', {templateUrl: 'partials/_messages.html', controller: 'MSGController'});
-$routeProvider.when('/record-sales', {templateUrl: 'partials/_record-sales.html', controller: 'RecordSalesController'});
+$routeProvider.when('/record-sales/:numBomba', {templateUrl: 'partials/_record-sales.html', controller: 'RecordSalesController'});
 $routeProvider.when('/search_usuario', {templateUrl: 'partials/_search-usuario.html', controller: 'SearchUsuarioController'});
 $routeProvider.otherwise({redirectTo: '/login'});
 }]);
