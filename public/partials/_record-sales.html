@@ -6,10 +6,10 @@
                 <form action="#" method="post" class="form" role="form" name="recordsalesFrm">
                     <div class="row">
                         <div class="col-xs-6 col-md-6">
-                            <input class="form-control" name="numbomba" placeholder="Num. Bomba" type="text" required="" ng-model="recordsales.numbomba">
+                            <input class="form-control" name="numbomba" placeholder="Num. Bomba" type="text" required="" ng-model="recordsales.numbomba" ng-disabled="true">
                         </div>
                         <div class="col-xs-6 col-md-6">
-                            <input class="form-control" name="operador" placeholder="Operador" type="text" required="" ng-model="recordsales.user">
+                            <input class="form-control" name="operador" placeholder="Operador" type="text" required="" ng-model="recordsales.user" ng-disabled="true">
                         </div>
                     </div>
                     <div class="row" ng-show="recordsales.obj.cliente">
@@ -21,8 +21,15 @@
                                 <div class="media-body">
                                     <h4 class="media-heading">{{recordsales.obj.cliente.nome}}</h4>
                                     <p>
-                                        <span class="label label-info">Saldo {{recordsales.obj.cliente.saldo | currency}}</span>
-                                        <span class="label label-success">{{recordsales.obj.cliente.liberado}}</span>
+                                        <span class="label label-info">Bomba : {{recordsales.numbomba}}</span>
+                                        <span class="label label-info">Usuário : {{recordsales.user}}</span>
+                                        <br/>
+                                        <span class="label label-info">Saldo : {{recordsales.obj.cliente.saldo | currency}}</span>
+                                        <span class="label label-success">Status : {{recordsales.obj.cliente.liberado}}</span><br/>
+                                        <span class="label label-info">Placa : {{recordsales.obj.cliente.placa | uppercase}}</span>
+                                        <span class="label label-info" ng-show="recordsales.qtdelitros">Qtde Litros : {{recordsales.qtdelitros}}</span>
+                                        <br/>
+                                        <span class="label label-info" ng-show="recordsales.historico.length > 0">Histórico : {{recordsales.historico}}</span>
                                     </p>
                                 </div>
                             </div>
@@ -34,11 +41,11 @@
                         </div>
 
                         <div class="col-xs-6 col-md-6">
-                            <input class="form-control" name="qtdelitros" placeholder="Qtde Listros" type="text" required="" ng-model="recordsales.qtdelitros">
+                            <input class="form-control" name="qtdelitros" placeholder="Qtde Listros" type="number" required="" ng-model="recordsales.qtdelitros" >
                         </div>
                     </div>
 
-                    <textarea class="form-control" name="historico" placeholder="Descrição/Histórico" ng-model="recordsales.historico"></textarea>
+                    <textarea class="form-control" name="historico" placeholder="Descrição/Histórico" ng-model="recordsales.historico">mm</textarea>
                     <br>
                     <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="recordsalesFrm.$invalid">
                         Ok</button>

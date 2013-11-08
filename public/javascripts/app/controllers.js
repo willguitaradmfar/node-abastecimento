@@ -30,6 +30,8 @@ angular.module('app.controllers', [])
 .controller('HomeController', ['$scope','$location', '$http', '$templateCache', '$routeParams',
 	function($scope, $location,  $http, $templateCache, $routeParams) {
 		console.log('HomeController');
+		$scope.posto = {};
+		$scope.posto.estoque = 66;
 		
 	}
 ])
@@ -52,6 +54,7 @@ angular.module('app.controllers', [])
 				$scope.recordsales.obj.cliente.nome = "Lucas Neri Fernando";
 				$scope.recordsales.obj.cliente.saldo = 987.66;
 				$scope.recordsales.obj.cliente.liberado = 'Liberado';
+				$scope.recordsales.obj.cliente.placa = $scope.recordsales.cliente;
 			}
 		}		
 	}
