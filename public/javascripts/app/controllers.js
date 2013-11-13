@@ -60,4 +60,14 @@ angular.module('app.controllers', [])
 	}
 ])
 
+//
+
+.controller('InputSupplyController', ['$scope','$location', '$http', '$templateCache', '$routeParams',
+	function($scope, $location,  $http, $templateCache, $routeParams) {
+		console.log('InputSupplyController');
+		
+		
+	}
+])
+
 ;
