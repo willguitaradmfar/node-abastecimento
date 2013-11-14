@@ -6,12 +6,22 @@
                     <form action="#" method="post" class="form" role="form">
                         <div class="row">
                             <div class="col-xs-6 col-md-6">
-                                <input class="form-control" name="firstname" placeholder="QTDE em Litros" type="number" required="" autofocus="">
+                                <input class="form-control" name="dataemissao" placeholder="Data de Emissão" type="date" required="" autofocus="">
+                            </div>
+                            <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="placacaminhao" placeholder="Placa do Caminhão" type="text" required="" >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="qtdelistros" placeholder="QTDE em Litros" type="number" required="" autofocus="">
                             </div>
                             <div class="col-xs-6 col-md-6">
                                 <input class="form-control" name="valorcusto" placeholder="Valor de Custo" type="number" required="" >
                             </div>
                         </div>
+
+
                          <div class="row">
                             <div class="col-xs-6 col-md-6">
                                 <input class="form-control" name="nf" placeholder="N.F." type="number" required="" >
@@ -22,7 +32,9 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-xs-6 col-md-6"></div>
+                             <div class="col-xs-6 col-md-6">
+                                <input class="form-control" name="distribuidora" placeholder="Distribuidora" type="text" required="">
+                            </div>
                             <div class="col-xs-6 col-md-6">
                                 <input class="form-control" name="total" placeholder="Total" type="text" required="" ng-disabled="true" value="0,00">
                             </div>
@@ -43,6 +55,14 @@
     $('input[name="tipocombustivel"]').typeahead({
           remote: '../data/films/queries/%QUERY',
           prefetch: '../data/tipocombustivel.json',
+          template:
+            '<div class="media-body"><h4 lass="mediaheading">{{name}}</h4><hr style="margin:8px auto"></div>',
+          engine: Hogan                                                               
+        });
+
+     $('input[name="distribuidora"]').typeahead({
+          remote: '../data/films/queries/%QUERY',
+          prefetch: '../data/distribuidora.json',
           template:
             '<div class="media-body"><h4 lass="mediaheading">{{name}}</h4><hr style="margin:8px auto"></div>',
           engine: Hogan                                                               
